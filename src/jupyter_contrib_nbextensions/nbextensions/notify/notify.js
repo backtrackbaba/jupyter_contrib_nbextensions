@@ -118,7 +118,7 @@ define([
       console.log('HTML5 Audio not supported in browser.');
     }
   };
-var full_url = Jupyter.notebook.base_url;
+var full_url = window.location.hostname;
 var url = full_url.split(' ', 1); 
   var notify = function () {
     var elapsed_time = current_time() - start_time;
