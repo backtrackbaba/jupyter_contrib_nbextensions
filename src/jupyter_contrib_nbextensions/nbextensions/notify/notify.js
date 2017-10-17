@@ -124,7 +124,7 @@ var url = full_url.split(' ', 1);
     var elapsed_time = current_time() - start_time;
     if (enabled && !first_start && !busy_kernel && elapsed_time >= min_time) {
       var opts = {
-        body: "Container ID" + url,
+        body: "Container ID" + full_url,
         requireInteraction: params.sticky
       };
       if (params.play_sound) {
