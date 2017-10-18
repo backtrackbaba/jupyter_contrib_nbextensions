@@ -118,27 +118,8 @@ define([
       console.log('HTML5 Audio not supported in browser.');
     }
   };
-var full_url = window.location.hostname;
-var url = full_url.split(' ', 1); 
-  var notify = function () {
-    var elapsed_time = current_time() - start_time;
-    if (enabled && !first_start && !busy_kernel && elapsed_time >= min_time) {
-      var opts = {
-        body: "Container ID" + Jupyter.notebook.base_url,
-        requireInteraction: params.sticky
-      };
-      if (params.play_sound) {
-        play_notification_sound(opts);
-      }
-      var n = new Notification(Jupyter.notebook.notebook_name, opts);
-      n.onclick = function(event){ window.focus(); }
-    }
-    if (first_start) {
-      first_start = false;
-    }
-  };
 
-/*
+
   var notify = function () {
     var elapsed_time = current_time() - start_time;
     if (enabled && !first_start && !busy_kernel && elapsed_time >= min_time) {
@@ -157,7 +138,7 @@ var url = full_url.split(' ', 1);
       first_start = false;
     }
   };
-*/
+
 
   var load_state = function () {
     if (!Jupyter.notebook) return;
